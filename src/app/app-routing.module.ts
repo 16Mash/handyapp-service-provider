@@ -25,12 +25,44 @@ const routes: Routes = [
   },
   {
     path: 'provider-details',
-    loadChildren: () => import('./screens/provider-details/provider-details.module').then( m => m.ProviderDetailsPageModule)
+    loadChildren: () => import('./screens/user/provider-details/provider-details.module').then( m => m.ProviderDetailsPageModule)
+  },
+  {
+    path: 'cv-page',
+    loadChildren: () => import('./screens/user/cv-page/cv-page.module').then( m => m.CvPagePageModule)
+  },
+  {
+    path: 'profile',
+    loadChildren: () => import('./screens/user/profile/profile.module').then( m => m.ProfilePageModule)
+  },
+  {
+    path: 'category-list',
+    loadChildren: () => import('./screens/user/category-list/category-list.module').then( m => m.CategoryListPageModule)
   },
     ]
   },
+{
+  path:'provider',
+  component:UsernavbarComponent,
+  children:[
+    {
+      path: '',
+      pathMatch: 'full',
+      redirectTo: 'home',
+
+    },
+  {
+    path: 'home',
+    loadChildren: () => import('./screens/provider/home/home.module').then( m => m.HomePageModule)
+  },
+  ]
  
 
+ 
+ 
+
+ 
+}
 ];
 
 @NgModule({

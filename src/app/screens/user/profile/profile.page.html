@@ -1,0 +1,18 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <div  class="w-11/12 mt-3  m-auto">
+    <ion-avatar class="avatar">
+      <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+    </ion-avatar>
+    <app-profile-card icon="person" label="Aubrey" />
+    <app-profile-card icon="mail" label="mashaba@gmail" />
+    <app-profile-card icon="call" label="0728685375" />
+    
+     <ion-button color="danger">Log Out</ion-button>
+     <ion-button color="danger">My Orders</ion-button>
+  </div>
+</ion-content>

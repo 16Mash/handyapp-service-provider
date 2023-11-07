@@ -1,0 +1,62 @@
+
+.container{
+    margin-top: 0px;
+    .ratedItems{
+      --background: rgba(255,255,255,.1);
+      padding: 0;
+      margin: 14px;
+      --border-radius:14px;
+      color: #ffffff;
+      font-weight: 600;
+    
+    }
+    
+    .rate-label{
+    padding: 6px 0;
+    .icon{
+      margin-right: 5px;
+      color: green;
+    }
+    
+    h4{
+      font-weight:600;
+      font-size: 15px;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+    
+    }
+    h6{
+      color: rgba(18, 18, 18, 0.66);
+    
+    }
+    
+    .align{
+     display: flex; 
+    
+     .rates{
+      margin-left: 30px;
+      font-size: 14px;
+      margin-bottom: 1px;
+      font-weight: bold;
+    
+    
+     .star{
+      font-size: 14px;
+      margin-right: 2px;
+      color: gold;
+      
+     }
+    }
+    }
+    
+    }
+    
+    img{
+      position: relative;
+      width:50px;
+      height: 50px;
+      overflow: hidden;
+      border-radius:20%;
+      cursor: pointer;
+    }
+    
+    }

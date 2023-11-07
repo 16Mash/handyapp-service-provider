@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Calligraffitti&display=swap');
+
+.avatar{
+  margin: auto;
+}
+.name{
+  display: flex;
+  justify-content: center;
+}
+ion-content{
+
+.body{
+  margin-top: 5px;
+  padding-top: 2px;
+  padding-left: 15px;
+  border-top-left-radius: 30px!important;
+  border-top-right-radius: 30px!important;
+  background: rgb(161, 163, 163);
+  .abt{
+    margin-top: 0px;
+  }
+ h3{
+  font-size: 15px;
+  margin-top: 0px;
+ }
+ h2{
+  color: greenyellow;
+  margin-top: 5px;
+  margin-bottom: 7px;
+  font-size: 20px;
+  font-family: 'Calligraffitti', cursive;
+  font-weight: 600;
+ion-icon{
+  margin-right: 5px;
+}
+ }
+}
+.but{
+  margin-top: 10px;
+  text-align: center;
+  ion-button{
+    --border-radius: 50px;
+  }
+  
+}
+.expDet{ 
+  margin-bottom: 5px;
+
+
+}
+}
