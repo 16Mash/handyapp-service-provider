@@ -5,13 +5,17 @@ import { UserDetailsComponent } from "./cards/user-details/user-details.componen
 import { OutlineBtnComponent } from "./outline-btn/outline-btn.component";
 import { ProfileCardComponent } from "./cards/profile-card/profile-card.component";
 import { SwipercardComponent } from "./cards/swipercard/swipercard.component";
+import { AuthContainerComponent } from "./auth-container/auth-container.component";
+import { BtnPrimaryComponent } from "./buttons/btn-primary/btn-primary.component";
 
 @NgModule({
   declarations: [
     UserDetailsComponent,
     OutlineBtnComponent,
     ProfileCardComponent,
-    SwipercardComponent
+    BtnPrimaryComponent,
+    SwipercardComponent,
+    AuthContainerComponent
    
   ],
   imports: [CommonModule,IonicModule],
@@ -19,7 +23,9 @@ import { SwipercardComponent } from "./cards/swipercard/swipercard.component";
    UserDetailsComponent,
    OutlineBtnComponent,
    ProfileCardComponent,
-   SwipercardComponent
+   BtnPrimaryComponent,
+   SwipercardComponent,
+   AuthContainerComponent
   ],
 })
 export class SharedModule {}
