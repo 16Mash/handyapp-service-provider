@@ -26,12 +26,12 @@ export class AuthService {
           .then((res) => {
             if(id){
               localStorage.setItem("userid",id )
-              localStorage.setItem("type","User")
+               localStorage.setItem("serviceUser",JSON.stringify(user))
             }
           
             this._spinnner.dismiss()
             
-            this._router.navigate(['user'])
+            this._router.navigateByUrl('/user')
           })
           .catch(error => {
             this._spinnner.dismiss()
@@ -58,9 +58,9 @@ export class AuthService {
             const data = res.data() as User;
             localStorage.setItem("userid", res.id)
             localStorage.setItem("serviceUser", JSON.stringify(data))
-            if (data.type == login.type && data.type == "Admin") {
+            if ( data.type == "provider") {
               this._router.navigateByUrl('/Admin')
-            } else if (data.type == login.type && data.type == "user") {
+            } else if (data.type == "user") {
               this._router.navigateByUrl('/user')
             } 
             else {
