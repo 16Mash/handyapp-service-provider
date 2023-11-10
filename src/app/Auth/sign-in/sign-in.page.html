@@ -1,25 +1,21 @@
 
 <ion-content [fullscreen]="true">
 
-
-
-
-
  <app-auth-container>
   <div class="mt-2 space-y-2">
    
     <p  class="font-bold text-gray-800 text-2xl text-center" >SIGN IN</p>
-    <form class="space-y-3">
-      <ion-input label="Email" type="email" label-placement="floating" fill="outline"
+    <form  [formGroup]="loginForm" class="space-y-3">
+      <ion-input formControlName="email" label="Email" type="email" label-placement="floating" fill="outline"
         placeholder="Enter Email"></ion-input>
 
-      <ion-input label="Password" type="password" label-placement="floating" fill="outline"
+      <ion-input formControlName="password" label="Password" type="password" label-placement="floating" fill="outline"
         placeholder="Enter Passsword"></ion-input>
       <br>
-
-      <app-btn-primary text="Sign In" routerLink="/home" />
+      <app-btn-primary (click)="signIn()" text="Sign In"  />
  
       <p class="text-center font-black no-italic text-amber-300 " routerLink="/password" style="font-size: 12px;">Forgot Password</p>
+     
       <div class="p3">
         <p class="font-bold italic text-gray-600">New Here ? <span
           class="font-black no-italic text-amber-400 underline" routerLink="/sign-up">Create Account</span> </p>

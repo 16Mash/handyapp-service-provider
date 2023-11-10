@@ -16,9 +16,6 @@ export class UsernavbarComponent  implements OnInit {
   selectTab(tab: string) {
     this.selectedTab = tab;
   }
-  tabChanged(event: any) {
-    this.selectedTab = event.tab;
-    console.log("clicked:"+event.tab)
-  }
+
 
 }

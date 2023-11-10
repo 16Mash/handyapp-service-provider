@@ -1,8 +1,9 @@
 
+
 <ion-content [fullscreen]="true">
   <app-auth-container>
-   <form class="space-y-3">
-     <p class="font-bold text-gray-700 text-2xl">SIGN UP</p>
+   <form [formGroup]="registerForm" class="space-y-3">
+     <p class="font-bold text-center text-gray-700 text-2xl">SIGN UP</p>
      <ion-input formControlName="names" label="Full Names" type="text" label-placement="floating" fill="outline"
      placeholder="Enter FullNames"></ion-input>
      <ion-input formControlName="phoneNo"  label="Phone" type="number" label-placement="floating" fill="outline"
@@ -12,9 +13,9 @@
      <ion-input formControlName="password"  label="Password" type="email" label-placement="floating" fill="outline"
      placeholder="Enter password"></ion-input>
      <br>
-     <app-btn-primary  text="Create Account"/>
-     <p class="font-bold italic text-gray-600">Already have an Account? <span
-       class="font-black no-italic text-amber-500 " routerLink="/signin">SIGN IN</span> </p>
+     <app-btn-primary (click)="register()" text="Create Account"/>
+     <p class="p3">Already have an Account? <span
+       class="font-black no-italic text-amber-500 " routerLink="/sign-in">SIGN IN</span> </p>
    </form>
   </app-auth-container>
  </ion-content>

@@ -2,35 +2,33 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { UsernavbarComponent } from './navigations/usernavbar/usernavbar.component';
 const routes: Routes = [
-
   {
     path: '',
-    redirectTo: 'user',
+    redirectTo: 'user/home',
     pathMatch: 'full'
   },
   {
-    path:'user',
-    component:UsernavbarComponent,
-    children:[
+    path: 'user',
+    component: UsernavbarComponent,
+    children: [
       {
         path: '',
         pathMatch: 'full',
         redirectTo: 'home',
-
       },
-
-  {
-    path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
-  },
+      {
+        path: 'home',
+        loadChildren: () => import('./screens/user/home/home.module').then((m) => m.HomePageModule),
+      },
+      {
+        path: 'cv-page',
+        loadChildren: () => import('./screens/user/cv-page/cv-page.module').then( m => m.CvPagePageModule)
+      },
   {
     path: 'provider-details',
     loadChildren: () => import('./screens/user/provider-details/provider-details.module').then( m => m.ProviderDetailsPageModule)
   },
-  {
-    path: 'cv-page',
-    loadChildren: () => import('./screens/user/cv-page/cv-page.module').then( m => m.CvPagePageModule)
-  },
+ 
   {
     path: 'profile',
     loadChildren: () => import('./screens/user/profile/profile.module').then( m => m.ProfilePageModule)
@@ -39,7 +37,7 @@ const routes: Routes = [
     path: 'category-list',
     loadChildren: () => import('./screens/user/category-list/category-list.module').then( m => m.CategoryListPageModule)
   },
-    ]
+    ],
   },
 {
   path:'provider',
