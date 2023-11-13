@@ -5,3 +5,14 @@ ion-button{
 display: flex;
 justify-content: center;
 }
+.p3{
+    text-align: center;
+    ion-title{
+        font-size: 15px;
+    }
+    span{
+        
+        font-size: 13px;
+        color: rgb(108, 108, 196);
+    }
+}

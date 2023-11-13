@@ -1,0 +1,39 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button default-href="home" text="Previous" icon="caret-back"></ion-back-button>
+    </ion-buttons> 
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" color="light" class="ion-padding">
+
+  <div class="list"> 
+  <div class="pack">
+    <ion-title color="primary" class="text-center">Book Abo Aunty</ion-title>
+
+    <ion-title color="primary" class="text-center">Choose a package</ion-title>
+  </div>
+  <ion-list [inset]="true" >
+    <ion-radio-group [allowEmptySelection]="true" value="turtles">
+    <ion-item>
+      <ion-radio value="weekly">Weekly</ion-radio><br/>
+    </ion-item>
+    <ion-item>
+      <ion-radio value="monthly">Monthly</ion-radio><br />
+    </ion-item>
+    <ion-item>
+      <ion-radio value="daily">Daily</ion-radio><br />
+    </ion-item>
+    <ion-item>
+      <ion-toggle>
+        <ion-label>Accept terms and conditions</ion-label>
+        <ion-note color="medium">Unsubscribe at any time</ion-note>
+      </ion-toggle>
+    </ion-item>
+  </ion-radio-group>
+  </ion-list>
+</div> 
+<ion-button color="success" expand="block" size="small" shape="round">Confirm Booking</ion-button>
+</ion-content>
