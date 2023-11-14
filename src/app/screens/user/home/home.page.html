@@ -1,5 +1,5 @@
 <ion-content>
-  <ion-header class="ion-no-border" >
+  <!-- <ion-header class="ion-no-border" >
  
   <div class="heading bg-blue-200">
     <div class="nav-bar">
@@ -62,8 +62,8 @@
     <button class="viewBt"><h1>View All</h1></button>
   </div>
  
-  <!-- Top rated -->
-<div class="container">
+  Top rated -->
+  <!-- <div class="container">
 
 
 <ion-item  [routerLink]="['/user/provider-details']" lines="none" color="light" class="ratedItems">
@@ -143,18 +143,67 @@
 
 
 
-</div>
+</div> -->
 
-  <!-- banner -->
+  <div class="w-11/12 m-auto">
+    <div class="flex space justify-evenly">
+      <p>Gauteng</p>
+      <div>
+        <ion-icon name="notifications-outline"></ion-icon>
+      </div>
+    </div>
+    <div class=" rounded-3xl mb-12 bg-gray-100">
+      <ion-searchbar placeholder="Search for services"></ion-searchbar>
+    </div>
+   
+    <div class=" flex items-center h h-36 shadow-xl rounded-xl bg-serviceBlue bg-opacity-75 relative">
+    
+      <div class="">
+        <img class="img2" src="./assets/images/2.png" />
+      </div>
 
-<!-- <div class="banner">
-    <swiper-container>
-      <swiper-slide><img src="./assets/images/ban.jpg"/></swiper-slide>
-      <swiper-slide><img src="./assets/images/ban.jpg"/></swiper-slide>
-      <swiper-slide><img src="./assets/images/ban.jpg"/></swiper-slide>
-    </swiper-container>
-    <div class="swiper-pagination"></div>
+      <div class="m-2 ">
+        <p class="text-2xl text-white" >Get <span class="font-black"> 25% OFF </span>on<br />
+          services near you</p>
+          <ion-button shape="round" color="success">View</ion-button>
 
-  </div> -->
+      </div>
+    </div>
 
+
+    <div class="mt-4">
+      <p class="text-gray-500 text-xl font-semibold">Categories</p>
+      <div class="flex">
+        
+        <div class="services">
+ 
+          <div class="service_names" (click)="listCat()"  [routerLink]="['/user/category-list']">
+            <img src="./assets/images/laun.jpg"/>
+            <div class="service-item"> <p>Laundry</p></div>
+          </div>
+          <div class="service_names">
+            <img src="./assets/images/clean.jpg"/>
+            <div class="service-item"><p>Cleaning</p></div>
+          </div>
+          <div class="service_names">
+            <img src="./assets/images/plum.jpg"/>
+            <div class="service-item"> <p>Plumber</p></div>
+          </div>
+          <div class="service_names">
+            <img src="./assets/images/elec.jpeg"/>
+            <div class="service-item"><p>Electrician</p> </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tp">
+      <h1>Top Rated</h1>
+      <button class="viewBt"><h1>View All</h1></button>
+    </div>
+      <div>
+        <app-providercard/>
+      </div>
+
+  </div>
 </ion-content>

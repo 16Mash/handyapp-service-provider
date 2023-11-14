@@ -54,7 +54,7 @@ export class DatabaseService {
     //update data
     updateData(collection: string, data: any, doc: any) {
       this._Spinner.startspinner()
-      this._AngularFirestore.collection(collection).doc(doc).update(data)
+    return  this._AngularFirestore.collection(collection).doc(doc).update(data)
         .then(() => {
           this._Spinner.dismiss()
           this._Spinner.presentToast('top', "Saved Successfully")

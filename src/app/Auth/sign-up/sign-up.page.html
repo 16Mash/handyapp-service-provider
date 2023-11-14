@@ -1,21 +1,55 @@
-
-
 <ion-content [fullscreen]="true">
-  <app-auth-container>
-   <form [formGroup]="registerForm" class="space-y-3">
-     <p class="font-bold text-center text-gray-700 text-2xl">SIGN UP</p>
-     <ion-input formControlName="names" label="Full Names" type="text" label-placement="floating" fill="outline"
-     placeholder="Enter FullNames"></ion-input>
-     <ion-input formControlName="phoneNo"  label="Phone" type="number" label-placement="floating" fill="outline"
-     placeholder="Enter Phone no"></ion-input>
-     <ion-input formControlName="email"  label="Email" type="email" label-placement="floating" fill="outline"
-     placeholder="Enter Email"></ion-input>
-     <ion-input formControlName="password"  label="Password" type="email" label-placement="floating" fill="outline"
-     placeholder="Enter password"></ion-input>
-     <br>
-     <app-btn-primary (click)="register()" text="Create Account"/>
-     <p class="p3">Already have an Account? <span
-       class="font-black no-italic text-amber-500 " routerLink="/sign-in">SIGN IN</span> </p>
-   </form>
-  </app-auth-container>
- </ion-content>
+  <div class="w-full flex items-center h-full m-auto bg-gray-50">
+    <div class="w-11/12 m-auto">
+      <p class="text-center mb-[10%] font-bold text-3xl text-slate-700">
+        Create New Account
+      </p>
+      <img class="w-[80%] m-auto" src="./assets/images/logo.png" alt="" />
+      <form [formGroup]="registerForm" class="space-y-3">
+        <p class="font-bold text-center text-gray-700 text-2xl">SIGN UP</p>
+        <ion-input
+          formControlName="names"
+          label="Full Names"
+          type="text"
+          label-placement="floating"
+          fill="outline"
+          placeholder="Enter FullNames"
+        ></ion-input>
+        <ion-input
+          formControlName="phoneNo"
+          label="Phone"
+          type="number"
+          label-placement="floating"
+          fill="outline"
+          placeholder="Enter Phone no"
+        ></ion-input>
+        <ion-input
+          formControlName="email"
+          label="Email"
+          type="email"
+          label-placement="floating"
+          fill="outline"
+          placeholder="Enter Email"
+        ></ion-input>
+        <ion-input
+          formControlName="password"
+          label="Password"
+          type="email"
+          label-placement="floating"
+          fill="outline"
+          placeholder="Enter password"
+        ></ion-input>
+        <br />
+        <app-button-orange (click)="register()" label="Create Account" />
+        <p class="p3">
+          Already have an Account?
+          <span
+            class="font-black no-italic text-amber-500"
+            routerLink="/sign-in"
+            >SIGN IN</span
+          >
+        </p>
+      </form>
+    </div>
+  </div>
+</ion-content>

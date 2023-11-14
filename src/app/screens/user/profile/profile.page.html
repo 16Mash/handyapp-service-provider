@@ -7,19 +7,21 @@
   </ion-toolbar>
 </ion-header>
 <ion-content [fullscreen]="true">
-  <div  class="w-11/12 mt-3  m-auto">
+  <div  class="w-11/12 mt-3  m-auto" *ngIf="user">
+    <div class="flex items-center h h-36 shadow-xl rounded-xl bg-serviceBlue bg-opacity-75">
     <ion-avatar class="avatar">
       <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
     </ion-avatar>
+    </div>
+    <br>
     <app-profile-card icon="person" [label]="user.names" />
     <app-profile-card icon="mail" [label]="user.email" />
     <app-profile-card icon="call" [label]="user.phone" />
     
-     <ion-button (click)="logout()"  slot="secondary" color="danger" >Log Out</ion-button>
+     <ion-button (click)="logout()" fill="outline" slot="secondary" color="danger" >Log Out</ion-button>
      <ion-button color="success">My Orders</ion-button>
      <div class="p3">
-    
-    <ion-title class="text-center" >Are You a provider? <span routerLink="/provider/home">Click here</span></ion-title>
+        <ion-title class="text-center" >Are You a provider? <span routerLink="/provider-activate">Click here</span></ion-title>
     
   </div>
   </div>

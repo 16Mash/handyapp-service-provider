@@ -49,10 +49,7 @@ const routes: Routes = [
         path: 'book',
         loadChildren: () => import('./screens/user/book/book.module').then( m => m.BookPageModule)
       },
-      {
-        path: 'provider-activate',
-        loadChildren: () => import('./screens/user/provider-activate/provider-activate.module').then( m => m.ProviderActivatePageModule)
-      },
+   
     ],
   },
   {
@@ -79,7 +76,24 @@ const routes: Routes = [
   {
     path: 'sign-in',
     loadChildren: () => import('./Auth/sign-in/sign-in.module').then(m => m.SignInPageModule)
-  }
+  },
+  {
+    path: 'dashboard',
+    loadChildren: () => import('./screens/provider/dashboard/dashboard.module').then( m => m.DashboardPageModule)
+  },
+  {
+    path: 'profile',
+    loadChildren: () => import('./screens/provider/profile/profile.module').then( m => m.ProfilePageModule)
+  },
+  {
+    path: 'request',
+    loadChildren: () => import('./screens/provider/request/request.module').then( m => m.RequestPageModule)
+  },
+  {
+    path: 'provider-activate',
+    loadChildren: () => import('./screens/user/provider-activate/provider-activate.module').then( m => m.ProviderActivatePageModule)
+  },
+
 
 ];
 

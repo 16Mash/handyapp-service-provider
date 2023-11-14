@@ -1,7 +1,7 @@
 <ion-header class="ion-no-border">
  
   <div class="custom-header">
-    <ion-title class="text-center">Add Your Work Details</ion-title>
+    <ion-title class="text-center text-white">Add Your Work Details</ion-title>
   </div>
 </ion-header>
 <ion-content  class="ion-padding"  >
@@ -10,9 +10,11 @@
   
 
   <div class="buttons">
+
+    <form [formGroup]="providerForm" >
     <ion-list>
       <ion-item>
-        <ion-select aria-label="fruit" placeholder="Select category">
+        <ion-select aria-label="fruit" formControlName="category" placeholder="Select category">
           <ion-select-option value="cleaner">Cleaner</ion-select-option>
           <ion-select-option value="landry">Laundry</ion-select-option>
           <ion-select-option value="electric">Electric</ion-select-option>
@@ -20,28 +22,18 @@
         </ion-select>
       </ion-item>
     </ion-list>
-    <ion-input label="About" label-placement="floating" fill="outline" placeholder="About"></ion-input>
+    <div class="space-y-3">
+
+    
+    <ion-input label="About" formControlName="about" label-placement="floating" fill="outline" placeholder="About"></ion-input>
+    <ion-input label="Monthly rate" formControlName="month" label-placement="floating" fill="outline" placeholder="Monthy Rate"></ion-input>
+    <ion-input label="Daily Rate" label-placement="floating" formControlName="daily" fill="outline" placeholder="DalyRate"></ion-input>
+    <ion-input label="Weekly Rate" label-placement="floating" formControlName="weekly" fill="outline" placeholder="Weekly Rate"></ion-input>
+  </div>
+</form>
     <br>
-<ion-title>Experience</ion-title>    
-    <ion-list>
-      <ion-item>
-        <ion-input label="Company" placeholder="Enter company name"></ion-input>
-     
-      </ion-item>
-     <ion-item>
-      <ion-input label="Years" placeholder="Years you've worked"></ion-input>
-     </ion-item>
-      <ion-item>
-        <ion-input label="Reason" placeholder="Reason for leaving"></ion-input>
-      </ion-item>
- 
-    </ion-list>
-
-
-
-
-    <ion-button  [routerLink]="['/user/cv-page']" >view CV</ion-button>
-    <ion-button [routerLink]="['/user/book']">Book Me Now</ion-button>
+  
+<app-button-orange (click)="chnage()" label="Switch to provider" />
   </div>
 
  <!-- </div>  -->

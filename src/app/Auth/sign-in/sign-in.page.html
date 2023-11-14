@@ -1,7 +1,7 @@
 
 <ion-content [fullscreen]="true">
 
- <app-auth-container>
+ <!-- <app-auth-container>
   <div class="mt-2 space-y-2">
    
     <p  class="font-bold text-gray-800 text-2xl text-center" >SIGN IN</p>
@@ -24,5 +24,37 @@
     </form>
   </div>
 
- </app-auth-container>
+ </app-auth-container> -->
+
+<div class="w-full flex  items-center h-full m-auto bg-gray-50">
+
+  <div class="w-11/12 m-auto">
+   
+    <p class="text-center  mb-[10%] font-bold text-3xl text-slate-700">Welcome Back</p>
+    <img class="w-[80%] m-auto" src="./assets/images/logo.png" alt="">
+    <p class="text-center my-4 text-gray-500 text-lg">Sign In to cotinue</p>
+
+    <form  [formGroup]="loginForm" class="space-y-3">
+      <ion-input formControlName="email" label="Email" type="email" label-placement="floating" fill="outline"
+        placeholder="Enter Email"></ion-input>
+
+      <ion-input formControlName="password" label="Password" type="password" label-placement="floating" fill="outline"
+        placeholder="Enter Passsword"></ion-input>
+      <br>
+      <app-button-blue (click)="signIn()"label="SIGN IN" />
+ 
+      <p class="text-center font-black no-italic text-amber-300 " routerLink="/password" style="font-size: 12px;">Forgot Password</p>
+     
+      <div class="p3">
+        <p class="font-bold italic text-gray-600">New Here ? <span
+          class="font-black no-italic text-amber-400 underline" routerLink="/sign-up">Create Account</span> </p>
+      </div>
+     
+    </form>
+   
+  </div>
+
+
+</div>
+
 </ion-content>

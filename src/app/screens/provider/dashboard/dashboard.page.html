@@ -1,0 +1,63 @@
+<ion-header class="ion-no-border "  [translucent]="true">
+<img class="h-16 m-auto p-2" src="assets/images/logo.png" alt="" srcset="">
+</ion-header>
+<ion-content [fullscreen]="true">
+  <div class="w-11/12 m-auto" *ngIf="user">
+      <div class="flex flex-col items-center justify-center h h-36 shadow-xl rounded-xl bg-serviceBlue bg-opacity-75">
+        <div class="h-fit">
+          <p class="text-center w-full text-3xl font-bold text-white">WELCOME</p>
+          <p  class="text-center w-full text-xl font-bold text-white">{{user.names}}</p>
+        </div>
+      </div>
+
+      <ion-grid>
+        <ion-row>
+     <ion-col size="6">
+      <ion-card routerLink="/profile" >
+     <ion-icon name="person"></ion-icon>
+     <ion-text>
+      <h2>Profile</h2>
+     </ion-text>
+      </ion-card>
+     </ion-col>
+    
+     <ion-col size="6">
+      <ion-card routerLink="/request" color="primary">
+        <ion-icon name="file-tray-stacked-outline"></ion-icon>
+     <ion-text>
+      <h2>Requests</h2>
+     </ion-text>
+      </ion-card>
+     </ion-col>
+    
+     <ion-col size="6">
+      <ion-card  color="primary">
+        <ion-icon name="card-outline"></ion-icon>
+     <ion-text>
+      <h2>Invoices</h2>
+     </ion-text>
+      </ion-card>
+     </ion-col>
+    
+     <ion-col size="6">
+      <ion-card >
+        <ion-icon name="document-text-outline"></ion-icon>
+     <ion-text>
+      <h2>View Cv</h2>
+     </ion-text>
+      </ion-card>
+     </ion-col>
+    
+     <ion-col size="6">
+      <ion-card  >
+        <ion-icon name="people-outline"></ion-icon>
+     <ion-text>
+      <h2>My Clients</h2>
+     </ion-text>
+      </ion-card>
+     </ion-col>
+    
+        </ion-row>
+      </ion-grid>
+  </div>
+</ion-content>

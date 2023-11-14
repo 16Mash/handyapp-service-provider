@@ -7,6 +7,9 @@ import { ProfileCardComponent } from "./cards/profile-card/profile-card.componen
 import { SwipercardComponent } from "./cards/swipercard/swipercard.component";
 import { AuthContainerComponent } from "./auth-container/auth-container.component";
 import { BtnPrimaryComponent } from "./buttons/btn-primary/btn-primary.component";
+import { ButtonBlueComponent } from "./buttons/button-blue/button-blue.component";
+import { ButtonOrangeComponent } from "./buttons/button-orange/button-orange.component";
+import { ProvidercardComponent } from "./cards/providercard/providercard.component";
 
 @NgModule({
   declarations: [
@@ -15,7 +18,11 @@ import { BtnPrimaryComponent } from "./buttons/btn-primary/btn-primary.component
     ProfileCardComponent,
     BtnPrimaryComponent,
     SwipercardComponent,
-    AuthContainerComponent
+    AuthContainerComponent,
+    ButtonBlueComponent,
+    ButtonOrangeComponent,
+    ProvidercardComponent,
+
    
   ],
   imports: [CommonModule,IonicModule],
@@ -25,7 +32,10 @@ import { BtnPrimaryComponent } from "./buttons/btn-primary/btn-primary.component
    ProfileCardComponent,
    BtnPrimaryComponent,
    SwipercardComponent,
-   AuthContainerComponent
+   AuthContainerComponent,
+   ButtonBlueComponent,
+   ButtonOrangeComponent,
+   ProvidercardComponent
   ],
 })
 export class SharedModule {}

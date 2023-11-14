@@ -59,8 +59,8 @@ export class AuthService {
             localStorage.setItem("userid", res.id)
             localStorage.setItem("serviceUser", JSON.stringify(data))
             if ( data.type == "provider") {
-              this._router.navigateByUrl('/Admin')
-            } else if (data.type == "user") {
+              this._router.navigateByUrl('/dashboard')
+            } else if (data.type == "User") {
               this._router.navigateByUrl('/user')
             } 
             else {
