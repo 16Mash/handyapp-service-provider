@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
 import { DatabaseService } from 'src/app/services/database.service';
 import { UtilsService } from 'src/app/services/utils.service';
 
@@ -10,7 +11,7 @@ import { UtilsService } from 'src/app/services/utils.service';
 export class ProfilePage implements OnInit {
   ref:any;
   user:any;
-  constructor(private _database:DatabaseService,private utils:UtilsService) { }
+  constructor(private _database:DatabaseService,private utils:UtilsService,private _Auth :AuthService) { }
 
   ngOnInit() {
     this.ref=localStorage.getItem("userid")
@@ -21,6 +22,10 @@ export class ProfilePage implements OnInit {
       this.utils.dismiss()
     })
    
+  }
+  
+  logout(){
+    this._Auth.logout()
   }
 
 }

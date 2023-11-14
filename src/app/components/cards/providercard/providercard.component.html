@@ -2,12 +2,12 @@
   <div class=" flex items-center" >
       <img class=" rounded-full h-20 w-20 object-contain" src="/assets/images/1.png" alt="" srcset="">
       <div class="" >
-          <p class="font-bold text-2xl text">Aubrey Mashaba </p>
-          <p class="text-lg font-extralight italic">Cattegory</p>
+          <p class="font-bold text-2xl text">{{data.names}}</p>
+          <p class="text-lg font-extralight italic">{{data.category}}</p>
       </div>
     
   </div>
-  <p class="font-bold p-1">R 100 <span class="text-gray-700 font-extralight italic" > /hour</span></p>
+  <p class="font-bold p-1">R {{data.daily}} <span class="text-gray-700 font-extralight italic" > /day</span></p>
   <div class="flex justify-between">
     <div class="flex items-center" >
      
@@ -28,7 +28,7 @@
   
    
     </div>
-    <app-button-blue label="View provider" />
+    <app-button-blue (click)="navigate()" label="View provider" />
   </div>
 
 </div>

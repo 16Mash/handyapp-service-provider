@@ -4,13 +4,12 @@
     
   </div>
 </ion-header>
-<ion-content  class="ion-padding"  >
+<ion-content *ngIf="provider"  class="ion-padding"  >
 <!-- <div class="body">  -->
-  <ion-title>Abo Aunty HouseKeepers</ion-title>
+  <ion-title class="text-xl font-bold text-serviceOrange" >{{provider.names}} {{provider.category}}</ion-title>
   <ion-chip color="medium">House Keeping</ion-chip>
  <ion-chip color="medium"><ion-icon name="star" color="warning" style="margin-right: 5px;"></ion-icon>Top rated</ion-chip>
-  <p style="font-size: 15px;">The best house keepers you can find in town we understand the 
-    importance of privacy and customer satisfication </p>
+  <p style="font-size: 15px;">{{provider.about}} </p>
     <div class="rec">
       <h4 ><ion-icon name="thumbs-up" color="success" style="margin-right: 5px; "></ion-icon>Recommended</h4>
       <h4><ion-icon name="star" color="warning" style="margin-right: 5px;
@@ -20,25 +19,24 @@
       Packages</h2>
 
     <div class="packages">
-      <ion-item href="">Daily</ion-item>
-      <ion-item href="">Weekly</ion-item>
-      <ion-item href="">Monthly</ion-item>
+      <ion-item >Daily</ion-item>
+      <ion-item >Weekly</ion-item>
+      <ion-item >Monthly</ion-item>
     </div>
   <div class="info">
-  <p>Offering full house keeping 
-    services on one day services.</p>
-    <h3>Includes</h3>
+  <p class="font-semibold text-" >Services Includes </p>
     <h2>>House cleaning</h2>
     <h2>>Baby seating</h2> 
     <h2>>Limited Laundry</h2>
     <h2>>Dish washing</h2>
-    <ion-chip color="warning" style="margin-bottom:10px;">R850</ion-chip>
+    
   </div>
-  <div class="buttons">
-    <ion-button  [routerLink]="['/user/cv-page']" >view CV</ion-button>
-    <ion-button [routerLink]="['/user/book']">Book Me Now</ion-button>
-  </div>
-
+<br>
+<br>
+<div>
+  <app-button-orange [routerLink]="['/book', ref]"
+  routerLinkActive="router-link-active" label="Request Service"/>
+</div>
  <!-- </div>  -->
 </ion-content>
 

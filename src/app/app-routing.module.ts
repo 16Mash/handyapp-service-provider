@@ -94,6 +94,16 @@ const routes: Routes = [
     loadChildren: () => import('./screens/user/provider-activate/provider-activate.module').then( m => m.ProviderActivatePageModule)
   },
 
+  {
+    path: 'provider-details/:id',
+    loadChildren: () => import('./screens/user/provider-details/provider-details.module').then(m => m.ProviderDetailsPageModule)
+  },
+  {
+    path: 'book/:id',
+    loadChildren: () => import('./screens/user/book/book.module').then( m => m.BookPageModule)
+  },
+
+
 
 ];
 

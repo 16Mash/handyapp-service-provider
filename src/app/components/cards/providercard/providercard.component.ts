@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-providercard',
@@ -6,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./providercard.component.scss'],
 })
 export class ProvidercardComponent  implements OnInit {
-
-  constructor() { }
+@Input() data:any;
+@Input() id:any;
+  constructor(private _router :Router) { }
 
   ngOnInit() {}
 
+
+  navigate(){
+    this._router.navigate(['/provider-details/'+this.id])
+  }
 }

@@ -23,9 +23,9 @@ export class DatabaseService {
     return dateTimeNumeric.toString();
   }
     //save new data
-    saveData(collection: string, data: any) {
+     saveData(collection: string, data: any) {
       this._Spinner.startspinner()
-      this._AngularFirestore.collection(collection).add(data)
+  return    this._AngularFirestore.collection(collection).add(data)
         .then(result => {
           this._Spinner.dismiss()
           this._Spinner.presentToast('top', "Saved Successfully")
@@ -57,7 +57,7 @@ export class DatabaseService {
     return  this._AngularFirestore.collection(collection).doc(doc).update(data)
         .then(() => {
           this._Spinner.dismiss()
-          this._Spinner.presentToast('top', "Saved Successfully")
+          this._Spinner.presentToast('top', "Updated Successfully")
         })
         .catch(err => {
           this._Spinner.dismiss()
@@ -68,7 +68,7 @@ export class DatabaseService {
     //set data
     setData(collection: string, data: any, doc: any) {
       this._Spinner.startspinner()
-      this._AngularFirestore.collection(collection).doc(doc).set(data)
+   this._AngularFirestore.collection(collection).doc(doc).set(data)
         .then(() => {
           this._Spinner.dismiss()
           this._Spinner.presentToast('top', "Saved Successfully")

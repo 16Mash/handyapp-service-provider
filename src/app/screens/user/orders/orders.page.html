@@ -5,9 +5,27 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Orders</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div class="w-11/12 m-auto" >
+    <div *ngFor="let item of request" >
+      <div class="rounded-md border border-serviceLight p-4 my-2" >
+          <div class="text-lg text-gray-800 ">
+            Client : {{item.payload.doc.data().usernames}}
+          </div>
+          <div class="text-md text-gray-600 ">
+            Duration : {{item.payload.doc.data().duration}}
+          </div>
+          <div class=" text-gray-600 ">
+            status : {{item.payload.doc.data().status}}
+          </div>
+
+          <div class="flex space-x-1 " *ngIf="item.payload.doc.data().status==='Invoiced'">
+          <app-button-orange label="Pay & Rate"/>
+          </div>
+        <div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
 </ion-content>

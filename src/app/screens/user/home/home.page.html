@@ -145,16 +145,8 @@
 
 </div> -->
 
-  <div class="w-11/12 m-auto">
-    <div class="flex space justify-evenly">
-      <p>Gauteng</p>
-      <div>
-        <ion-icon name="notifications-outline"></ion-icon>
-      </div>
-    </div>
-    <div class=" rounded-3xl mb-12 bg-gray-100">
-      <ion-searchbar placeholder="Search for services"></ion-searchbar>
-    </div>
+  <div class="w-11/12 m-auto pt-5">
+  
    
     <div class=" flex items-center h h-36 shadow-xl rounded-xl bg-serviceBlue bg-opacity-75 relative">
     
@@ -201,8 +193,8 @@
       <h1>Top Rated</h1>
       <button class="viewBt"><h1>View All</h1></button>
     </div>
-      <div>
-        <app-providercard/>
+      <div class="my-2" *ngFor="let item of providers">
+        <app-providercard [data]="item.payload.doc.data()" [id]="item.payload.doc.id" />
       </div>
 
   </div>
