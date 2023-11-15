@@ -16,6 +16,7 @@ export class BookPage implements OnInit {
   user:any;
   uid:any;
   bookForm!:FormGroup;
+  CurrentDate:any = new Date();
   constructor(    private _utils: UtilsService,
     private Database: DatabaseService,
     private _auth: AuthService,

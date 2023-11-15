@@ -32,7 +32,10 @@
   <br>
   <ion-input formControlName="address" label="Address" type="text" label-placement="floating" fill="outline"
   placeholder="Enter Address"></ion-input>
-
+  <br/>
+  <ion-datetime [(ngModel)]="date" [showDefaultButtons]="true" presentation="date" [isDateEnabled]="isWeekday" id="startdate"
+  min="{{CurrentDate | date:'yyyy-MM-dd'}}" >
+  </ion-datetime>
 
 </form>
   </ion-list>
