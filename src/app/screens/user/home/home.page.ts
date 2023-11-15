@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import { DatabaseService } from 'src/app/services/database.service';
 import { UtilsService } from 'src/app/services/utils.service';
@@ -14,7 +15,8 @@ export class HomePage implements OnInit {
   constructor(
     private _utils: UtilsService,
     private database: DatabaseService,
-    private _auth: AuthService
+    private _auth: AuthService,
+    private _Router:Router
   ) {}
   ngOnInit() {
     this.user = this._utils.getArray('serviceUser');
@@ -28,7 +30,7 @@ export class HomePage implements OnInit {
     })
   }
 
-  listCat(){
-    
+  listCat(cat:any){
+    this._Router.navigate(['/user/category-list/'+cat])
   }
 }

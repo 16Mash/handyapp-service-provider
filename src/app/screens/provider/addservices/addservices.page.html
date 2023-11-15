@@ -1,0 +1,23 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>addservices</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="w-11/12 m-auto">
+    <br>
+    <p class="">Add Service </p>
+    <br>
+    <form [formGroup]="serviceForm">
+      <ion-input formControlName="service" label="Service" type="text" label-placement="floating" fill="outline"
+        placeholder="Enter Service Name"></ion-input>
+    </form>
+     <br>
+    <app-button-blue (click)="Save()" label="Add Service" />
+
+  </div>
+</ion-content>

@@ -12,6 +12,7 @@ import { UtilsService } from 'src/app/services/utils.service';
 export class ProviderDetailsPage implements OnInit {
   provider:any;
   ref:any
+  service:any
   constructor(    private _utils: UtilsService,
     private Database: DatabaseService,
     private _auth: AuthService,
@@ -27,6 +28,11 @@ export class ProviderDetailsPage implements OnInit {
       localStorage.setItem("service",this.provider.category)
       this._utils.dismiss();
     });
+
+    this.Database.readSub("Users",this.ref,"Services").subscribe(res=>{
+      this.service = res;
+      console.log(res)
+    })
   }
 
 }

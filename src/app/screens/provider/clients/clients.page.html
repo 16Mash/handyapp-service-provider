@@ -1,0 +1,43 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Clients Jobs</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="w-11/12 m-auto">
+      <ion-segment [(ngModel)]="status" (ionChange)="ReadClient()">
+        <ion-segment-button value="Accepted">
+          <ion-label>Accepted</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="Completed">
+          <ion-label>History</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+
+      <div *ngFor="let item of request" >
+        <div class="rounded-md border border-serviceLight p-4 my-2" >
+            <div class="text-lg text-gray-800 ">
+              Client : {{item.payload.doc.data().usernames}}
+            </div>
+            <div class="text-md text-gray-600 ">
+              Duration : {{item.payload.doc.data().duration}}
+            </div>
+            <div class=" text-gray-600 ">
+              status : {{item.payload.doc.data().status}}
+            </div>
+  
+            <div class=" space-x-1 " *ngIf="item.payload.doc.data().status==='Accepted'">
+            <app-button-orange (click)="Status('Completed',item.payload.doc.id)"  label="Commplete & invoice"/>
+            </div>
+            
+          <div>
+  
+          </div>
+        </div>
+      </div>
+  </div>
+</ion-content>

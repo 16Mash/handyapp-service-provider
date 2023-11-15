@@ -1,13 +1,16 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>Orders</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Invoices</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <div class="w-11/12 m-auto" >
+  <div class="w-11/12 m-auto">
     <div *ngFor="let item of request" >
-      <div class="rounded-md border border-serviceLight p-4 my-2" >
+      <div class="rounded-md border border-serviceLight bg-serviceLight bg-opacity-30 p-4 my-2" >
           <div class="text-lg text-gray-800 ">
             Client : {{item.payload.doc.data().usernames}}
           </div>
@@ -15,14 +18,11 @@
             Duration : {{item.payload.doc.data().duration}}
           </div>
           <div class=" text-gray-600 ">
-            status : {{item.payload.doc.data().status}}
+            Paid : {{item.payload.doc.data().paid}}
           </div>
-
-          <div class="flex space-x-1 " *ngIf="!item.payload.doc.data().paid && item.payload.doc.data().invoiceed">
-          <app-button-orange routerLink="/payment/{{item.payload.doc.id}}" label="Pay Now"/>
-          </div>
+          
         <div>
-
+  
         </div>
       </div>
     </div>

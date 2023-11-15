@@ -90,4 +90,16 @@ export class DatabaseService {
      readbase(collection:any,where:any,con:any,value:any,){
       return this._AngularFirestore.collection(collection, ref=> ref.where(where,con,value))
      }
+     readService(uid:any,status:any){
+      return this._AngularFirestore.collection("Services",ref=> ref.where('provider','==',uid).where('status','==',status))
+      
+     }
+     readSub(collection:any,doc:any,subcol:any){
+      return this._AngularFirestore.collection(collection).doc(doc).collection(subcol).valueChanges()
+     }
+
+     readProvide(cat:any){
+      return this._AngularFirestore.collection("Users",ref=> ref.where('type','==','provider').where('category','==',cat))
+      
+     }
 }

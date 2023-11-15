@@ -1,0 +1,23 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Payment</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="w-11/12 m-auto mt-4">
+    <p class="text-gray-700 font-semibold text-lg">Make A payment</p>
+    <form [formGroup]="serviceForm" class="space-y-2">
+      <ion-input formControlName="cvv" label="CVV" type="text" label-placement="floating" fill="outline"
+        placeholder="Enter CVV" class="w-24" ></ion-input>
+        <ion-input formControlName="cardNo" label="Card No" type="text" label-placement="floating" fill="outline"
+        placeholder="Enter Card No"  ></ion-input>
+    </form>
+    <br>
+    <app-button-orange label="Pay Now" (click)="Status()" />
+  </div>
+ 
+</ion-content>

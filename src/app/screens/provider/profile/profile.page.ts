@@ -11,6 +11,7 @@ import { UtilsService } from 'src/app/services/utils.service';
 export class ProfilePage implements OnInit {
   ref:any;
   user:any;
+  service:any
   constructor(private _database:DatabaseService,private utils:UtilsService,private _Auth :AuthService) { }
 
   ngOnInit() {
@@ -20,6 +21,11 @@ export class ProfilePage implements OnInit {
       this.user=result
       console.log(this.user)
       this.utils.dismiss()
+    })
+
+    this._database.readSub("Users",this.ref,"Services").subscribe(res=>{
+      this.service = res;
+      console.log(res)
     })
    
   }

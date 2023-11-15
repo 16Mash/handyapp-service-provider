@@ -27,6 +27,21 @@
       </P>
     </div>
   <br>
+
+  <div class="shadow-xl bg-white rounded-lg  w-full p-4 ">
+   
+    <div class="flex  items-center text-serviceBlue text-lg font-bold  justify-between">
+      <p>Services Included</p> 
+      <ion-button routerLink="/addservices" >
+        <ion-icon slot="icon-only" shape="round" name="add"></ion-icon>
+      </ion-button>
+    </div> 
+    <div *ngFor="let item of service">
+      <p>{{item.service}}</p>
+    </div>
+
+  </div>
+  
   <ion-button fill="outline" (click)="logout()">
     <ion-icon slot="end" name="exit"></ion-icon>
    Log Out

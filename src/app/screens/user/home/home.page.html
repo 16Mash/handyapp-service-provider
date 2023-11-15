@@ -169,19 +169,19 @@
         
         <div class="services">
  
-          <div class="service_names" (click)="listCat()"  [routerLink]="['/user/category-list']">
+          <div class="service_names"   (click)="listCat('landry')">
             <img src="./assets/images/laun.jpg"/>
             <div class="service-item"> <p>Laundry</p></div>
           </div>
-          <div class="service_names">
+          <div class="service_names" (click)="listCat('cleaner')" >
             <img src="./assets/images/clean.jpg"/>
             <div class="service-item"><p>Cleaning</p></div>
           </div>
-          <div class="service_names">
+          <div class="service_names" (click)="listCat('plumber')">
             <img src="./assets/images/plum.jpg"/>
             <div class="service-item"> <p>Plumber</p></div>
           </div>
-          <div class="service_names">
+          <div class="service_names"  (click)="listCat('elctrician')"  >
             <img src="./assets/images/elec.jpeg"/>
             <div class="service-item"><p>Electrician</p> </div>
           </div>

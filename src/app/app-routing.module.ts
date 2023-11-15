@@ -34,7 +34,7 @@ const routes: Routes = [
         loadChildren: () => import('./screens/user/profile/profile.module').then(m => m.ProfilePageModule)
       },
       {
-        path: 'category-list',
+        path: 'category-list/:id',
         loadChildren: () => import('./screens/user/category-list/category-list.module').then(m => m.CategoryListPageModule)
       },
       {
@@ -102,6 +102,24 @@ const routes: Routes = [
     path: 'book/:id',
     loadChildren: () => import('./screens/user/book/book.module').then( m => m.BookPageModule)
   },
+  {
+    path: 'clients',
+    loadChildren: () => import('./screens/provider/clients/clients.module').then( m => m.ClientsPageModule)
+  },
+  {
+    path: 'invoice',
+    loadChildren: () => import('./screens/provider/invoice/invoice.module').then( m => m.InvoicePageModule)
+  },
+  {
+    path: 'addservices',
+    loadChildren: () => import('./screens/provider/addservices/addservices.module').then( m => m.AddservicesPageModule)
+  },
+  {
+    path: 'payment/:id',
+    loadChildren: () => import('./screens/user/payment/payment.module').then( m => m.PaymentPageModule)
+  },
+
+
 
 
 

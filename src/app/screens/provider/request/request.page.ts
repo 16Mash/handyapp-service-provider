@@ -8,23 +8,29 @@ import { UtilsService } from 'src/app/services/utils.service';
   styleUrls: ['./request.page.scss'],
 })
 export class RequestPage implements OnInit {
-  ref:any;
-  user:any;
-  request:any;
-  constructor(private _database:DatabaseService,private utils:UtilsService) { }
+  ref: any;
+  user: any;
+  request: any;
+  constructor(
+    private _database: DatabaseService,
+    private utils: UtilsService
+  ) {}
 
   ngOnInit() {
-    this.ref=localStorage.getItem("userid")
-    this.utils.startspinner()
-    this._database.readbase("Services",'provider','==',this.ref).snapshotChanges().subscribe(res=>{
-      console.log("provider",res)
-      this.request=res;
-      this.utils.dismiss()
-  })
-   
+    this.ref = localStorage.getItem('userid');
+
+    this.utils.startspinner();
+    this._database
+      .readService(this.ref, 'new')
+      .snapshotChanges()
+      .subscribe((res) => {
+        this.request = res;
+        console.log(res)
+        this.utils.dismiss();
+      });
   }
 
-  Status(data:any,doc :any){
-    this._database.updateData("Services",{'status':data},doc)
+  Status(data: any, doc: any) {
+    this._database.updateData('Services', { status: data }, doc);
   }
 }

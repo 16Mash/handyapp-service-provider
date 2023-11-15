@@ -1,43 +1,40 @@
 <ion-header class="ion-no-border">
- 
+
   <div class="custom-header">
-    
+
   </div>
 </ion-header>
-<ion-content *ngIf="provider"  class="ion-padding"  >
-<!-- <div class="body">  -->
-  <ion-title class="text-xl font-bold text-serviceOrange" >{{provider.names}} {{provider.category}}</ion-title>
+<ion-content *ngIf="provider" class="ion-padding">
+  <!-- <div class="body">  -->
+  <ion-title class="text-xl font-bold text-serviceOrange">{{provider.names}} {{provider.category}}</ion-title>
   <ion-chip color="medium">House Keeping</ion-chip>
- <ion-chip color="medium"><ion-icon name="star" color="warning" style="margin-right: 5px;"></ion-icon>Top rated</ion-chip>
+  <ion-chip color="medium"><ion-icon name="star" color="warning" style="margin-right: 5px;"></ion-icon>Top
+    rated</ion-chip>
   <p style="font-size: 15px;">{{provider.about}} </p>
-    <div class="rec">
-      <h4 ><ion-icon name="thumbs-up" color="success" style="margin-right: 5px; "></ion-icon>Recommended</h4>
-      <h4><ion-icon name="star" color="warning" style="margin-right: 5px;
+  <div class="rec">
+    <h4><ion-icon name="thumbs-up" color="success" style="margin-right: 5px; "></ion-icon>Recommended</h4>
+    <h4><ion-icon name="star" color="warning" style="margin-right: 5px;
        "></ion-icon>4.7 Reviews</h4>
-    </div>
-    <h2 style="margin: 0px;font-weight:550;font-size: 20px;">
-      Packages</h2>
-
-    <div class="packages">
-      <ion-item >Daily</ion-item>
-      <ion-item >Weekly</ion-item>
-      <ion-item >Monthly</ion-item>
-    </div>
-  <div class="info">
-  <p class="font-semibold text-" >Services Includes </p>
-    <h2>>House cleaning</h2>
-    <h2>>Baby seating</h2> 
-    <h2>>Limited Laundry</h2>
-    <h2>>Dish washing</h2>
-    
   </div>
-<br>
-<br>
-<div>
-  <app-button-orange [routerLink]="['/book', ref]"
-  routerLinkActive="router-link-active" label="Request Service"/>
-</div>
- <!-- </div>  -->
-</ion-content>
+  <h2 style="margin: 0px;font-weight:550;font-size: 20px;">
+    Packages</h2>
 
- 
+  <div class="packages">
+    <ion-item>Daily</ion-item>
+    <ion-item>Weekly</ion-item>
+    <ion-item>Monthly</ion-item>
+  </div>
+  <div class="info">
+    <p class="font-semibold text-">Services Includes </p>
+    <div *ngFor="let item of service">
+      <p>>{{item.service}}</p>
+    </div>
+
+  </div>
+  <br>
+  <br>
+  <div>
+    <app-button-orange [routerLink]="['/book', ref]" routerLinkActive="router-link-active" label="Request Service" />
+  </div>
+  <!-- </div>  -->
+</ion-content>
