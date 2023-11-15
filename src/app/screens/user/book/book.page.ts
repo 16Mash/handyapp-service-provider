@@ -16,7 +16,13 @@ export class BookPage implements OnInit {
   user:any;
   uid:any;
   bookForm!:FormGroup;
+  date!:Date;
   CurrentDate:any = new Date();
+  isWeekday = (dateString: string) => {
+    const date = new Date(dateString);
+    const utcDay = date.getUTCDay();
+    return utcDay !== 0 && utcDay !== 6;
+  };
   constructor(    private _utils: UtilsService,
     private Database: DatabaseService,
     private _auth: AuthService,
