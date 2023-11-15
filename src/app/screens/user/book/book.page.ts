@@ -43,7 +43,8 @@ export class BookPage implements OnInit {
       providername:[localStorage.getItem('provider')],
       service:[localStorage.getItem('service')],
       duration:['weekly',Validators.required],
-      status:['Booked']
+      status:['Booked'],
+      address:['',Validators.required]
 
     })
   }
