@@ -15,6 +15,12 @@
           <div class="text-lg text-gray-800 ">
             Client : {{item.payload.doc.data().usernames}}
           </div>
+          <div class="text-lg text-gray-800 ">
+            Requested Date: {{item.payload.doc.data().jobDate | date: 'dd MMM YYYY'}}
+          </div>
+          <div class="text-lg text-gray-800 ">
+            Client Address: {{item.payload.doc.data().address}}
+          </div>
           <div class="text-md text-gray-600 ">
             Duration : {{item.payload.doc.data().duration}}
           </div>
@@ -22,7 +28,7 @@
             status : {{item.payload.doc.data().status}}
           </div>
 
-          <div class="flex space-x-1 " *ngIf="item.payload.doc.data().status==='Booked'">
+          <div class="flex space-x-1 " *ngIf="item.payload.doc.data().status==='Requested'">
           <app-button-blue (click)="Status('rejected',item.payload.doc.id)" label="Reject" />
           <app-button-orange (click)="Status('Accepted',item.payload.doc.id)"  label="Accepts"/>
           </div>

@@ -18,14 +18,22 @@
         </ion-segment-button>
       </ion-segment>
 
+      
       <div *ngFor="let item of request" >
         <div class="rounded-md border border-serviceLight p-4 my-2" >
             <div class="text-lg text-gray-800 ">
               Client : {{item.payload.doc.data().usernames}}
             </div>
+            <div class="text-lg text-gray-800 ">
+              Requested Date: {{item.payload.doc.data().jobDate | date: 'dd MMM YYYY'}}
+            </div>
+            <div class="text-lg text-gray-800 ">
+              Client Address: {{item.payload.doc.data().address}}
+            </div>
             <div class="text-md text-gray-600 ">
               Duration : {{item.payload.doc.data().duration}}
             </div>
+
             <div class=" text-gray-600 ">
               status : {{item.payload.doc.data().status}}
             </div>

@@ -9,7 +9,7 @@
     <div *ngFor="let item of request" >
       <div class="rounded-md border border-serviceLight p-4 my-2" >
           <div class="text-lg text-gray-800 ">
-            Client : {{item.payload.doc.data().providername}}
+            Provider : {{item.payload.doc.data().providername}}
           </div>
           <div class="text-md text-gray-600 ">
             Duration : {{item.payload.doc.data().duration}}

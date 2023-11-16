@@ -21,7 +21,7 @@ export class RequestPage implements OnInit {
 
     this.utils.startspinner();
     this._database
-      .readService(this.ref, 'Booked')
+      .readService(this.ref, 'Requested')
       .snapshotChanges()
       .subscribe((res) => {
         this.request = res;

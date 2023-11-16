@@ -9,7 +9,7 @@
 
 <ion-content *ngIf="provider" [fullscreen]="true" color="light" class="ion-padding">
 
-  <div class="list"> 
+  <div class="list w-11/12 m-auto"> 
   <div class="pack">
     <ion-title color="primary" class="text-center">Book {{provider.names}}</ion-title>
 
@@ -23,7 +23,7 @@
       <ion-radio value="weekly">Weekly R{{provider.weekly}}</ion-radio><br/>
     </ion-item>
     <ion-item>
-      <ion-radio value="monthly">Monthly R{{provider.monthly}} </ion-radio><br />
+      <ion-radio value="monthly">Monthly R{{provider.month}} </ion-radio><br />
     </ion-item>
     <ion-item>
       <ion-radio value="daily">Daily R{{provider.daily}}</ion-radio><br />
@@ -33,11 +33,10 @@
   <ion-input formControlName="address" label="Address" type="text" label-placement="floating" fill="outline"
   placeholder="Enter Address"></ion-input>
   <br/>
-  <ion-datetime [(ngModel)]="date" [showDefaultButtons]="true" presentation="date" [isDateEnabled]="isWeekday" id="startdate"
-  min="{{CurrentDate | date:'yyyy-MM-dd'}}" >
-  </ion-datetime>
-
 </form>
+<ion-datetime [(ngModel)]="date" [showDefaultButtons]="true" presentation="date" [isDateEnabled]="isWeekday" id="startdate"
+min="{{CurrentDate | date:'yyyy-MM-dd'}}" >
+</ion-datetime>
   </ion-list>
 </div> 
 <app-button-orange (click)="book()" label="Confirm booking" />

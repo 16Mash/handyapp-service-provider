@@ -50,22 +50,26 @@ export class BookPage implements OnInit {
       providername:[localStorage.getItem('provider')],
       service:[localStorage.getItem('service')],
       duration:['weekly',Validators.required],
-      status:['Booked'],
-      address:['',Validators.required]
+      status:['Requested'],
+      address:['',Validators.required],
+      jobDate:['']
 
     })
   }
 
   book(){
 
-    if(this.bookForm.valid)
-    {
+    if(this.bookForm.valid&& this.date!=null)
+    {   this.bookForm.value['jobDate']=this.date
         this.Database.saveData("Services",this.bookForm.value).then(()=>{
           this._Router.navigateByUrl("/user")
         })
        
     }else {
       this.bookForm.markAllAsTouched()
+      if(this.date==null){
+        this._utils.presentToast('top',"Select the Date")
+      }
     }
   }
 
