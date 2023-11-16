@@ -34,9 +34,14 @@
   placeholder="Enter Address"></ion-input>
   <br/>
 </form>
+<ion-datetime-button  datetime="startdate"></ion-datetime-button>
+<ion-modal [keepContentsMounted]="true">
+  <ng-template>
 <ion-datetime [(ngModel)]="date" [showDefaultButtons]="true" presentation="date" [isDateEnabled]="isWeekday" id="startdate"
 min="{{CurrentDate | date:'yyyy-MM-dd'}}" >
 </ion-datetime>
+</ng-template>
+</ion-modal>
   </ion-list>
 </div> 
 <app-button-orange (click)="book()" label="Confirm booking" />

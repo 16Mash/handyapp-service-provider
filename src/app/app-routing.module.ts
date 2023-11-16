@@ -49,6 +49,10 @@ const routes: Routes = [
         path: 'book',
         loadChildren: () => import('./screens/user/book/book.module').then( m => m.BookPageModule)
       },
+      {
+        path: 'all-providers',
+        loadChildren: () => import('./screens/user/all/all.module').then( m => m.AllPageModule)
+      },
    
     ],
   },
@@ -118,6 +122,8 @@ const routes: Routes = [
     path: 'payment/:id',
     loadChildren: () => import('./screens/user/payment/payment.module').then( m => m.PaymentPageModule)
   },
+  
+
 
 
 

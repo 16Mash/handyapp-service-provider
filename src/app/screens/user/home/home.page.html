@@ -157,7 +157,7 @@
       <div class="m-2 ">
         <p class="text-2xl text-white" >Get <span class="font-black"> 25% OFF </span>on<br />
           services near you</p>
-          <ion-button shape="round" color="success">View</ion-button>
+          <ion-button routerLink="/user/all-providers" shape="round" color="success" >View</ion-button>
 
       </div>
     </div>
@@ -191,7 +191,7 @@
 
     <div class="tp">
       <h1>Top Rated</h1>
-      <button class="viewBt"><h1>View All</h1></button>
+      <button class="viewBt" routerLink="/user/all-providers"><h1>View All</h1></button>
     </div>
       <div class="my-2" *ngFor="let item of providers">
         <app-providercard [data]="item.payload.doc.data()" [id]="item.payload.doc.id" />

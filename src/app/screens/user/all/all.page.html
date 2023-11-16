@@ -1,0 +1,14 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button>gf</ion-back-button>
+    </ion-buttons>
+    <ion-title class="text-center">All Providers</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="my-2" *ngFor="let item of providers">
+    <app-providercard [data]="item.payload.doc.data()" [id]="item.payload.doc.id" />
+  </div>
+</ion-content>
